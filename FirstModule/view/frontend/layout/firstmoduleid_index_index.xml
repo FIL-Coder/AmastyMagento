@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Amasty_FirstModule::css/beauty.css" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+        <referenceContainer name="content">
+            <container name="firstModule.main" htmlTag="div" htmlClass="container-add-form">
+                <block class="Amasty\FirstModule\Block\Hello" name="firstModule.hello" template="Amasty_FirstModule::hello.phtml" />
+                <block class="Amasty\FirstModule\Block\Form" name="firstModule.form" template="Amasty_FirstModule::form.phtml">
+                    <block name="firstModule.additional" template="Amasty_FirstModule::additional.phtml" />
+                </block>
+            </container>
+        </referenceContainer>
+    </body>
+
+</page>
