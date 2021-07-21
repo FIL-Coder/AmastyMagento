@@ -1,0 +1,14 @@
+<?php
+/**
+ * @var Amasty\FirstModule\Block\Form $block
+ */
+?>
+
+<form action="" class="<?= $block->getData('css_class') ?>">
+    <input class="<?= $block->getData('css_class1') ?>" type="text" name="sku" placeholder="sku">
+    <input class="<?= $block->getData('css_class2') ?>" type="number" name="qty" placeholder="qty">
+    <div>
+        <?= $block->getChildHtml(); ?>
+    </div>
+    <input class="<?= $block->getData('css_class3') ?>" type="submit">
+</form>
