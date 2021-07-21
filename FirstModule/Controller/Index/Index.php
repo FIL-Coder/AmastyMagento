@@ -1,4 +1,5 @@
 <?php
+
 namespace Amasty\FirstModule\Controller\Index;
 
 use Magento\Framework\App\Action\Action;

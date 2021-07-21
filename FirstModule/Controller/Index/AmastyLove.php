@@ -1,4 +1,5 @@
 <?php
+
 namespace Amasty\FirstModule\Controller\Index;
 
 class AmastyLove extends \Magento\Framework\App\Action\Action
