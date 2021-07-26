@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <first_config>
+            <general>
+                <enabled>0</enabled>
+                <enter_qty>1</enter_qty>
+            </general>
+        </first_config>
+    </default>
+</config>

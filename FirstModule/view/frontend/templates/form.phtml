@@ -1,0 +1,20 @@
+<?php
+/**
+ * @var Amasty\FirstModule\Block\Form $block
+ */
+?>
+
+<form action="<?php echo $block->getFormAction() ?>" method="get" class="<?= $block->getData('css_class') ?>">
+    <input class="<?= $block->getData('css_class1') ?>" type="text" name="sku" placeholder="sku">
+    <?php
+        if ($block->enabledQty()) {
+        ?>
+        <input class="<?= $block->getData('css_class2') ?>" type="number" name="qty" placeholder="qty" value="<?= $block->getDefaultQty(); ?>">
+    <?php
+        }
+        ?>
+    <div>
+        <?= $block->getChildHtml(); ?>
+    </div>
+    <input class="<?= $block->getData('css_class3') ?>" type="submit">
+</form>

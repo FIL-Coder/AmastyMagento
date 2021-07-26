@@ -1,0 +1,29 @@
+body {
+    border: 10px solid #ff0000;
+}
+
+.formFirstModule {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #5cb85c;
+    border: 5px solid #5cb85c;
+    border-radius: 30px;
+}
+
+.inputString {
+    padding: 10px;
+    margin: 10px;
+}
+
+.inputNumber {
+    padding: 10px;
+    margin: 10px;
+}
+
+.buttonSubmit {
+    padding: 10px;
+    background: #5bc0de;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 25px;
+}
