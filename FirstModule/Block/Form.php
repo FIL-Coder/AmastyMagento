@@ -20,7 +20,7 @@ class Form extends \Magento\Framework\View\Element\Template
         parent::__construct($context);
     }
 
-    public function onOffQtyField()
+    public function enabledQty()
     {
         return $this->scopeConfig->isSetFlag('first_config/general/show_qty');
     }
@@ -28,5 +28,10 @@ class Form extends \Magento\Framework\View\Element\Template
     public function getDefaultQty()
     {
         return $this->scopeConfig->getValue('first_config/general/default_qty');
+    }
+
+    public function getFormAction()
+    {
+        return $this->getUrl('firstmodule/index/addproduct');
     }
 }
