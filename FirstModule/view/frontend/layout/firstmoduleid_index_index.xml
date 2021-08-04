@@ -15,6 +15,7 @@
                         <argument name="css_class2" xsi:type="string">inputNumber</argument>
                         <argument name="css_class3" xsi:type="string">buttonSubmit</argument>
                     </arguments>
+                    <block name="firstmodule.autocomplete" template="Amasty_FirstModule::test.phtml" />
                     <block name="firstModule.additional" template="Amasty_FirstModule::additional.phtml" />
                 </block>
             </container>

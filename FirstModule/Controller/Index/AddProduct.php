@@ -46,7 +46,7 @@ class AddProduct extends Action
         $get = $this->getRequest()->getParams();
 
         try {
-            $product = $this->productRepository->get($get['sku']);
+            $product = $this->productRepository->get($get['sku-search']);
         } catch (NoSuchEntityException $e) {
             $this->messageManager->addErrorMessage($e->getMessage());
 

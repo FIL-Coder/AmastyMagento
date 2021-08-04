@@ -4,8 +4,11 @@
  */
 ?>
 
-<form action="<?php echo $block->getFormAction() ?>" method="get" class="<?= $block->getData('css_class') ?>">
-    <input class="<?= $block->getData('css_class1') ?>" type="text" name="sku" placeholder="sku">
+<form action="<?php echo $block->getFormAction() ?>" method="post" class="<?= $block->getData('css_class') ?>">
+    <div>
+        <?= $block->getBlockHtml('firstmodule.autocomplete') ?>
+    </div>
+    <!--<input class="<?/*= $block->getData('css_class1') */?>" type="text" name="sku" placeholder="sku">-->
     <?php
         if ($block->enabledQty()) {
         ?>
@@ -14,7 +17,7 @@
         }
         ?>
     <div>
-        <?= $block->getChildHtml(); ?>
+        <?= $block->getBlockHtml('firstModule.additional'); ?>
     </div>
     <input class="<?= $block->getData('css_class3') ?>" type="submit">
 </form>
