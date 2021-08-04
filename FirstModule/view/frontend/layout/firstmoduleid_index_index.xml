@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Amasty_FirstModule::css/beauty.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <container name="firstModule.main" htmlTag="div" htmlClass="container-add-form">
+                <block class="Amasty\FirstModule\Block\Hello" name="firstModule.hello" template="Amasty_FirstModule::hello.phtml" />
+                <block class="Amasty\FirstModule\Block\Form" name="firstModule.form" template="Amasty_FirstModule::form.phtml">
+                    <arguments>
+                        <argument name="css_class" xsi:type="string">formFirstModule</argument>
+                        <argument name="css_class1" xsi:type="string">inputString</argument>
+                        <argument name="css_class2" xsi:type="string">inputNumber</argument>
+                        <argument name="css_class3" xsi:type="string">buttonSubmit</argument>
+                    </arguments>
+                    <block name="firstmodule.autocomplete" template="Amasty_FirstModule::test.phtml" />
+                    <block name="firstModule.additional" template="Amasty_FirstModule::additional.phtml" />
+                </block>
+            </container>
+        </referenceContainer>
+    </body>
+</page>
