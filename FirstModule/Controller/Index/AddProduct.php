@@ -10,6 +10,7 @@ use Magento\Catalog\Api\ProductRepositoryInterface;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Framework\Message\ManagerInterface;
+use Magento\Framework\Event\ManagerInterface as EventManager;
 
 
 class AddProduct extends Action
@@ -29,24 +30,37 @@ class AddProduct extends Action
      */
     protected $messageManager;
 
+    /**
+     * @var EventManager
+     */
+    protected $eventManager;
+
     public function __construct(
+        EventManager $eventManager,
         Context $context,
         CheckoutSession $checkoutSession,
         ProductRepositoryInterface $productRepository,
-        ManagerInterface $messageManager
+        ManagerInterface $messageManager,
+        array $data = []
     ) {
+        $this->eventManager = $eventManager;
         $this->checkoutSession = $checkoutSession;
         $this->productRepository = $productRepository;
         $this->messageManager = $messageManager;
-        parent::__construct($context);
+        parent::__construct($context, $data);
     }
 
     public function execute()
     {
-        $get = $this->getRequest()->getParams();
+        $post = $this->getRequest()->getParams();
+
+        $this->eventManager->dispatch(
+            'amasty_firstmodule_check_addproduct',
+            ['sku_to_check' => $post['sku-search']]
+        );
 
         try {
-            $product = $this->productRepository->get($get['sku-search']);
+            $product = $this->productRepository->get($post['sku-search']);
         } catch (NoSuchEntityException $e) {
             $this->messageManager->addErrorMessage($e->getMessage());
 
@@ -64,7 +78,7 @@ class AddProduct extends Action
 
         if ($product->getTypeId() == 'simple') {
             try {
-                $quote->addProduct($product, $get['qty']);
+                $quote->addProduct($product, $post['qty']);
                 $quote->save();
             } catch (LocalizedException $e) {
                 $this->messageManager->addErrorMessage($e->getMessage());

@@ -2,11 +2,12 @@
 namespace Amasty\SecondModule\Plugin;
 
 class ChangeUrl {
-    public function aroundGetFormAction(
+    public function afterGetFormAction(
         $subject,
-        callable $proceed
+        $result
     ) {
-        return '/magento2/checkout/cart/add';
+        $result = '/magento2/checkout/cart/add';
+        return $result;
     }
 }
 

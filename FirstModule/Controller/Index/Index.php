@@ -40,7 +40,6 @@ class Index extends Action
 
     public function execute()
     {
-        //echo “Это мой первый Action.”;
         if ($this->scopeConfig->isSetFlag('first_config/general/enabled')) {
             return $this->resultFactory->create(ResultFactory::TYPE_PAGE);
         } else {
