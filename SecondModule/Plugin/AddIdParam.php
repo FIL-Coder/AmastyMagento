@@ -34,8 +34,12 @@ class AddIdParam {
 
         $postData = $this->getRequest()->getParams();
 
-        $product = $this->productRepository->get($postData['sku-search']);
+        try {
+            $product = $this->productRepository->get($postData['sku-search']);
 
-        return $this->getRequest()->setPostValue('product', $product->getEntityId());
+            return $this->getRequest()->setPostValue('product', $product->getEntityId());
+        } catch (\Throwable $e) {
+            return $e;
+        }
     }
 }
