@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="amasty_firstmodule_check_addproduct"><!-- имя события -->
+        <observer
+            name="checkSameSku"
+            instance="Amasty\SecondModule\Observer\CheckSameSkuObserver" /><!-- класс, который будет обрабатывать это событие-->
+    </event>
+</config>
