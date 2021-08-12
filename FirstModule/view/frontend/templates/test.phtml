@@ -1,0 +1,27 @@
+<div data-bind="scope: 'firstAutocomplete'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<!--<script type="text/x-magento-init">
+   {
+       ".logo": {
+           "Amasty_FirstModule/js/testfile": {"selector": ".page-footer"}
+       }
+   }
+</script>-->
+
+<script type="text/x-magento-init">
+   {
+       "*": {
+           "Magento_Ui/js/core/app": {
+               "components": {
+                   "firstAutocomplete": {
+                       "component": "Amasty_FirstModule/js/koAutocomplete",
+                       "template" : "Amasty_FirstModule/koAutocomplete"
+                   }
+               }
+           }
+       }
+   }
+</script>
+
