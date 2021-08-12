@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Amasty_FirstModule::menu"
+        title="First Module"
+        module="Amasty_FirstModule"
+        sortOrder="70"
+        resource="Amasty_FirstModule::menu"
+        />
+        <add id="Amasty_FirstModule::blacklist"
+        title="Blacklist"
+        module="Amasty_FirstModule"
+        sortOrder="10"
+        resource="Amasty_FirstModule::blacklist"
+        parent="Amasty_FirstModule::menu"
+        action="firstmodule/blacklist"
+        />
+    </menu>
+</config>
+

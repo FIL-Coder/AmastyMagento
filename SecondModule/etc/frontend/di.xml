@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="Amasty\FirstModule\Controller\Index\Index" type="Amasty\SecondModule\Controller\Index\Index"/>
-    <!--<type name="Amasty\FirstModule\Block\Form">
+<!--    <type name="Amasty\FirstModule\Block\Form">
         <plugin name="changeUrl" type="Amasty\SecondModule\Plugin\ChangeUrl" />
     </type>
     <type name="Magento\Checkout\Controller\Cart\Add">

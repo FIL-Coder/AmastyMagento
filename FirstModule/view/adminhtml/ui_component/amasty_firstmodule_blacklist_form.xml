@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <!-- Говорим, откуда брать данные на фронте -->
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">
+                amasty_firstmodule_blacklist_form.amasty_firstmodule_blacklist_listing_data_source
+            </item>
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="save">
+                <class>save primary</class>
+                <label translate="true">Save product</label>
+                <url path="*/*/save" />
+            </button>
+            <button name="back">
+                <class>back</class>
+                <label translate="true">Back</label>
+                <url path="*/*/index"/>
+            </button>
+        </buttons>
+        <namespace>amasty_firstmodule_blacklist_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>amasty_firstmodule_blacklist_form.amasty_firstmodule_blacklist_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="amasty_firstmodule_blacklist_form">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="firstmodule/blacklist/save"/>
+        </settings>
+        <!-- Класс, который будет загружать нашу модель в форму -->
+        <dataProvider class="Amasty\FirstModule\Ui\Component\Form\DataProvider" name="amasty_firstmodule_blacklist_listing_data_source">
+            <settings>
+                <requestFieldName>product_id</requestFieldName>
+                <primaryFieldName>product_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="general">
+        <settings>
+            <label translate="true">Product data</label>
+        </settings>
+        <!-- инпут для ввода текста -->
+        <field name="sku" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Sku</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="qty" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Qty</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">integer</item>
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="default" xsi:type="number">10</item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+</form>
+
